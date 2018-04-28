@@ -6,9 +6,18 @@
                 <input ng-model="$ctrl.query" type="text" class="form-control" id="search-input" placeholder="Search">
             </div>
         </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+                <label for="filter-input">Filter</label>
+                <select ng-model="$ctrl.orderProp" class="form-control" id="filter-input">
+                    <option value="name">Alphabetical</option>
+                    <option value="age">Newest</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="row">
-        <div ng-repeat="phone in $ctrl.phones  | filter:$ctrl.query" class="phone-item col-xs-12 col-md-3">
+        <div ng-repeat="phone in $ctrl.phones  | filter:$ctrl.query  |  orderBy:$ctrl.orderProp" class="phone-item col-xs-12 col-md-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{phone.name}}</h5>
