@@ -1,0 +1,62 @@
+<ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#!/phones">Home</a></li>
+        <li class="breadcrumb-item active">{{$ctrl.phone.name}}</li>
+</ol>
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <div id="phone-carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li ng-repeat-start="img in $ctrl.phone.images" ng-if="$first" data-target="#phone-carousel" data-slide-to="{{$index}}" class="active"></li>
+                <li ng-repeat-end ng-if="!$first" data-target="#phone-carousel" data-slide-to="{{$index}}"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active" ng-repeat-start="img in $ctrl.phone.images" ng-if="$first">
+                    <img class="d-block w-100" src="{{img}}" alt="Slide {{$index}}">
+                </div>
+                <div class="carousel-item" ng-repeat-end ng-if="!$first">
+                    <img class="d-block w-100" src="{{img}}" alt="Slide {{$index}}">
+                </div>
+            </div>
+            <span class="carousel-control-prev" data-target="#phone-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </span>
+            <span class="carousel-control-next" data-target="#phone-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </span>
+        </div>
+        <!-- Carousel -->
+    </div>
+    <div class="col-xs-12 col-md-8">
+
+        <h3>{{$ctrl.phone.name}}</h3>
+        <p>{{$ctrl.phone.description}}</p>
+        <h5>System Specs:</h5>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <span class="nav-link active show" data-toggle="tab" data-target="#availability">Availability and Networks</span>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link" data-toggle="tab" data-target="#additional">Additional Features</span>
+            </li>
+        </ul>
+        <div id="specs-content" class="tab-content">
+            <div class="tab-pane fade active show" id="availability">
+                    <dl>
+                            <dt>Availability</dt>
+                            <dd ng-repeat="availability in $ctrl.phone.availability">{{availability}}</dd>
+                            <dt>Infrared</dt>
+                            <span class="{{$ctrl.phone.connectivity.infrared | checkmark}}"></span>
+                            <dt>GPS</dt>
+                            <span class="{{$ctrl.phone.connectivity.gps | checkmark}}"></span>
+                        </dl>
+            </div>
+            <div class="tab-pane fade" id="additional">
+                    <span>Additional Features</span>
+                    <dd>{{$ctrl.phone.additionalFeatures}}</dd>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,8 +6,11 @@
 .phone-item{
   margin-bottom:30px;
 }
-
 .card{
   height: 480px;
 }
 /* End of Phone Cards Changes */
+
+.tab-pane{
+  margin-top: 10px;
+}

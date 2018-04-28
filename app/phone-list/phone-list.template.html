@@ -18,7 +18,6 @@
     </div>
     <div class="row">
         <div ng-repeat="phone in $ctrl.phones  | filter:$ctrl.query  |  orderBy:$ctrl.orderProp" class="phone-item col-xs-12 col-md-3">
-
             <div class="card">
                 <a href="#!/phones/{{phone.id}}" class="thumb">
                     <div class="card-header">
