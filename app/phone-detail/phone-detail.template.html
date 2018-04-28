@@ -1,10 +1,12 @@
 <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#!/phones">Home</a></li>
-        <li class="breadcrumb-item active">{{$ctrl.phone.name}}</li>
+    <li class="breadcrumb-item">
+        <a href="#!/phones">Home</a>
+    </li>
+    <li class="breadcrumb-item active">{{$ctrl.phone.name}}</li>
 </ol>
 <div class="row">
-    <div class="col-xs-12 col-md-4">            
-            
+    <div class="col-xs-12 col-md-4">
+
         <div id="phone-carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li ng-repeat-start="img in $ctrl.phone.images" ng-if="$first" data-target="#phone-carousel" data-slide-to="{{$index}}" class="active"></li>
@@ -37,7 +39,16 @@
 
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <span class="nav-link active show" data-toggle="tab" data-target="#availability">Availability and Networks</span>
+                <span class="nav-link active show" data-toggle="tab" data-target="#availability">Connectivity and Networks</span>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link" data-toggle="tab" data-target="#android">Android</span>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link" data-toggle="tab" data-target="#hardware">Hardware</span>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link" data-toggle="tab" data-target="#camera">Camera</span>
             </li>
             <li class="nav-item">
                 <span class="nav-link" data-toggle="tab" data-target="#additional">Additional Features</span>
@@ -45,18 +56,110 @@
         </ul>
         <div id="specs-content" class="tab-content">
             <div class="tab-pane fade active show" id="availability">
-                    <dl>
+                <div class="row">
+                    <div class="col-md-6">
+                        <dl>
                             <dt>Availability</dt>
                             <dd ng-repeat="availability in $ctrl.phone.availability">{{availability}}</dd>
                             <dt>Infrared</dt>
-                            <span class="{{$ctrl.phone.connectivity.infrared | checkmark}}"></span>
+                            <dd class="{{$ctrl.phone.connectivity.infrared | checkmark}}"></dd>
                             <dt>GPS</dt>
-                            <span class="{{$ctrl.phone.connectivity.gps | checkmark}}"></span>
+                            <dd class="{{$ctrl.phone.connectivity.gps | checkmark}}"></dd>
                         </dl>
+                    </div>
+                    <div class="col-md-6">
+                        <dl>
+                            <dt>Network Support</dt>
+                            <dd>{{$ctrl.phone.connectivity.cell}}</dd>
+                            <dt>WiFi</dt>
+                            <dd>{{$ctrl.phone.connectivity.wifi}}</dd>
+                            <dt>Bluetooth</dt>
+                            <dd>{{$ctrl.phone.connectivity.bluetooth}}</dd>
+                            <dt>Infrared</dt>
+                            <dd class="{{$ctrl.phone.connectivity.infrared | checkmark}}"></dd>
+                            <dt>GPS</dt>
+                            <dd class="{{$ctrl.phone.connectivity.gps | checkmark}}"></dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="android">
+                <dl>
+                    <dt>OS Version</dt>
+                    <dd>{{$ctrl.phone.android.os}}</dd>
+                    <dt>UI</dt>
+                    <dd>{{$ctrl.phone.android.ui}}</dd>
+                </dl>
+            </div>
+            <div class="tab-pane fade" id="hardware">
+               <div class="row">
+                   <div class="col-md-4">
+                        <dl>
+                                <dt>CPU</dt>
+                                <dd>{{$ctrl.phone.hardware.cpu}}</dd>
+                                <dt>USB</dt>
+                                <dd>{{$ctrl.phone.hardware.usb}}</dd>
+                                <dt>Audio / headphone jack</dt>
+                                <dd>{{$ctrl.phone.hardware.audioJack}}</dd>
+                                <dt>FM Radio</dt>
+                                <dd class="{{$ctrl.phone.hardware.fmRadio | checkmark}}"></dd>
+                                <dt>Accelerometer</dt>
+                                <dd class="{{$ctrl.phone.hardware.accelerometer | checkmark}}"></dd>
+                            </dl>
+                   </div>
+                   <div class="col-md-4">
+                        <dl>
+                                <dt>RAM</dt>
+                                <dd>{{$ctrl.phone.storage.ram}}</dd>
+                                <dt>Internal Storage</dt>
+                                <dd>{{$ctrl.phone.storage.flash}}</dd>
+                            </dl>
+                   </div>
+                   <div class="col-md-4">
+                        <dl>
+                                <dt>Screen size</dt>
+                                <dd>{{$ctrl.phone.display.screenSize}}</dd>
+                                <dt>Screen resolution</dt>
+                                <dd>{{$ctrl.phone.display.screenResolution}}</dd>
+                                <dt>Touch screen</dt>
+                                <dd class="{{$ctrl.phone.display.touchScreen | checkmark}}"></dd>
+                            </dl>
+                   </div>
+                   <div class="col-md-4">
+                        <dl>
+                                <dt>Battery Type</dt>
+                                <dd>{{$ctrl.phone.battery.type}}</dd>
+                                <dt>Talk Time</dt>
+                                <dd>{{$ctrl.phone.battery.talkTime}}</dd>
+                                <dt>Standby time (max)</dt>
+                                <dd>{{$ctrl.phone.battery.standbyTime}}</dd>
+                            </dl>
+                   </div>
+                   <div class="col-md-4">
+                        <dl>
+                                <dt>Dimensions</dt>
+                                <dd ng-repeat="dim in $ctrl.phone.sizeAndWeight.dimensions">{{dim}}</dd>
+                                <dt>Weight</dt>
+                                <dd>{{$ctrl.phone.sizeAndWeight.weight}}</dd>
+                            </dl>
+                   </div>
+               </div>
+               
+               
+                
+                
+            </div>
+            <div class="tab-pane fade" id="camera">
+                <dl>
+                    <dt>Primary</dt>
+                    <dd>{{$ctrl.phone.camera.primary}}</dd>
+                    <dt>Features</dt>
+                    <dd>{{$ctrl.phone.camera.features.join(', ')}}</dd>
+                </dl>
             </div>
             <div class="tab-pane fade" id="additional">
-                    <span>Additional Features</span>
-                    <dd>{{$ctrl.phone.additionalFeatures}}</dd>
+                <dd>{{$ctrl.phone.additionalFeatures}}</dd>
             </div>
         </div>
     </div>

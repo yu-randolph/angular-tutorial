@@ -80,3 +80,16 @@
   font-size: 1.2em;
   font-weight: bold;
 }
+
+/* Bootstrap Tabs for Phone Specs */
+.nav-tabs {
+  padding-bottom:20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+}
+.nav-tabs>li {
+  float: none;
+}
+/* End Bootstrap Tabs for Phone Specs */
