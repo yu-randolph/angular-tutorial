@@ -20,7 +20,7 @@
         <div ng-repeat="phone in $ctrl.phones  | filter:$ctrl.query  |  orderBy:$ctrl.orderProp" class="phone-item col-xs-12 col-md-3">
 
             <div class="card">
-                <a href="#/phones/{{phone.id}}" class="thumb">
+                <a href="#!/phones/{{phone.id}}" class="thumb">
                     <div class="card-header">
                         <h5 class="card-title">{{phone.name}}</h5>
                     </div>

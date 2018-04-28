@@ -13,12 +13,18 @@
   <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
   <!-- Global Stylesheet -->
   <link rel="stylesheet" href="app.css" />
+  <!-- Angular -->
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
   <!-- phoneCatAppModule -->
   <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
   <script src="phone-list/phone-list.module.js"></script>
+  <script src="phone-detail/phone-detail.module.js"></script>
   <!-- phoneCatComponents -->
   <script src="phone-list/phone-list.component.js"></script>
+  <script src="phone-detail/phone-detail.component.js"></script>
+</head>
 </head>
 
 <body>  
@@ -31,7 +37,7 @@
         <div class="collapse navbar-collapse" id="nav-items">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Step 8 <span class="sr-only">(current)</span></a>              
+              <a class="nav-link" href="#">Step 9 <span class="sr-only">(current)</span></a>              
             </li>
           </ul>
         </div>
@@ -39,7 +45,7 @@
       
   <section id="content">
       <div class="container">
-          <phone-list></phone-list>
+          <div ng-view></div>
         </div>
         <!-- container -->
   </section>
