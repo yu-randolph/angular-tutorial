@@ -3,10 +3,9 @@
         <li class="breadcrumb-item active">{{$ctrl.phone.name}}</li>
 </ol>
 <div class="row">
-    <div class="col-xs-12 col-md-4">
-            <img ng-src="{{$ctrl.mainImageUrl}}" class="phone" />
+    <div class="col-xs-12 col-md-4">            
             
-        <!-- <div id="phone-carousel" class="carousel slide" data-ride="carousel">
+        <div id="phone-carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li ng-repeat-start="img in $ctrl.phone.images" ng-if="$first" data-target="#phone-carousel" data-slide-to="{{$index}}" class="active"></li>
                 <li ng-repeat-end ng-if="!$first" data-target="#phone-carousel" data-slide-to="{{$index}}"></li>
@@ -27,18 +26,13 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </span>
-        </div> -->
+        </div>
         <!-- Carousel -->
     </div>
     <div class="col-xs-12 col-md-8">
 
         <h3>{{$ctrl.phone.name}}</h3>
         <p>{{$ctrl.phone.description}}</p>
-        <ul class="phone-thumbs">
-                <li ng-repeat="img in $ctrl.phone.images">
-                  <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" />
-                </li>
-        </ul>
         <h5>System Specs:</h5>
 
         <ul class="nav nav-tabs">
