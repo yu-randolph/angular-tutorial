@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="phonecatApp">
 
 <head>
   <meta charset="utf-8">
@@ -11,12 +11,13 @@
     crossorigin="anonymous">
   <!-- Materia Theme -->
   <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
-  <link rel="stylesheet" href="app.css" />
   <script src="bower_components/angular/angular.js"></script>
+  <link rel="stylesheet" href="app.css" />
+  <script src="app.js"></script>
 
 </head>
 
-<body>  
+<body ng-controller="PhoneListController">  
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Gallery</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-items" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +27,7 @@
         <div class="collapse navbar-collapse" id="nav-items">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Step 1 <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Step 2 <span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
@@ -35,26 +36,16 @@
   <section id="content">
       <div class="container">
           <div class="row">
-            <div class="phone-item col-xs-12 col-md-3">
+            <div  ng-repeat="phone in phones" class="phone-item col-xs-12 col-md-3">              
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Nexus S</h5>
-                  <div class="card-text">Fast just got faster with Nexus S.</div>
+                  <h5 class="card-title">{{phone.name}}</h5>
+                  <div class="card-text">{{phone.snippet}}</div>
                 </div>
               </div>
               <!-- card -->
             </div>
-            <!-- phone-item -->
-            <div class="phone-item col-xs-12 col-md-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Motorola XOOM™ with Wi-Fi</h5>
-                    <div class="card-text"> The Next, Next Generation tablet.</div>
-                  </div>
-                </div>
-                <!-- card -->
-              </div>
-              <!-- phone-item -->
+            <!-- phone-item -->            
           </div>
           <!-- row -->
         </div>
