@@ -1,4 +1,13 @@
-body {
-  padding-top: 20px;
+.container{
+  padding-top:20px;
 }
 
+/* Changes to Phone Cards */
+.phone-item{
+  margin-bottom:30px;
+}
+
+.card{
+  height: 100px;
+}
+/* End of Phone Cards Changes */

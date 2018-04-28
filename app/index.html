@@ -1,28 +1,73 @@
 <!doctype html>
 <html lang="en" ng-app>
-  <head>
-    <meta charset="utf-8">
-    <title>Google Phone Gallery</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="app.css" />
-    <script src="bower_components/angular/angular.js"></script>
-  </head>
-  <body>
 
-    <ul>
-      <li>
-        <span>Nexus S</span>
-        <p>
-          Fast just got faster with Nexus S.
-        </p>
-      </li>
-      <li>
-        <span>Motorola XOOM™ with Wi-Fi</span>
-        <p>
-          The Next, Next Generation tablet.
-        </p>
-      </li>
-    </ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Phone Gallery</title>
+  
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <!-- Materia Theme -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css" />
+  <script src="bower_components/angular/angular.js"></script>
 
-  </body>
+</head>
+
+<body>  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Gallery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-items" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav-items">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Step 1 <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+  <section id="content">
+      <div class="container">
+          <div class="row">
+            <div class="phone-item col-xs-12 col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Nexus S</h5>
+                  <div class="card-text">Fast just got faster with Nexus S.</div>
+                </div>
+              </div>
+              <!-- card -->
+            </div>
+            <!-- phone-item -->
+            <div class="phone-item col-xs-12 col-md-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Motorola XOOM™ with Wi-Fi</h5>
+                    <div class="card-text"> The Next, Next Generation tablet.</div>
+                  </div>
+                </div>
+                <!-- card -->
+              </div>
+              <!-- phone-item -->
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+  </section>
+
+  <!-- Bootstrap 4 JS + Jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>  
+</body>
+
 </html>
